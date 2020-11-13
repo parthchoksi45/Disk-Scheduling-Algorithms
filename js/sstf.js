@@ -1,21 +1,21 @@
 function sstfqueue()
 {
+    seek_queue=[];
     var head=parseInt(start_track);
-    while(request_queue.length!=0)
+    while(request_queue1.length!=0)
     {
         var difference_array=[];
         var difference_index = new Map();
-        for(var i=0;i<request_queue.length;i++)
+        for(var i=0;i<request_queue1.length;i++)
         {
-            var temp=Math.abs(head-request_queue[i]);
-            difference_array.push([temp,parseInt(request_queue[i])]);
+            var temp=Math.abs(head-request_queue1[i]);
+            difference_array.push([temp,parseInt(request_queue1[i])]);
 
         }
         difference_array.sort(function(a,b){
             return a[0]-b[0];
         })
         var ans;
-        console.log(difference_array);
         if(difference_array.length!=1 && difference_array[0][0]==difference_array[1][0])
         {
             if(direction=="left")
@@ -39,11 +39,17 @@ function sstfqueue()
             else
             direction="left";
         }
-        console.log(ans);
-        var j=parseInt(request_queue.indexOf(ans));
-        console.log(j);
-        request_queue.splice(j,1);
+        var j=parseInt(request_queue1.indexOf(ans));
+        request_queue1.splice(j,1);
         head=ans;
         seek_queue.push(ans);
     }
+var z=start_track;
+var seek_time=0;
+for(var k=0;k<seek_queue.length;k++)
+{
+    seek_time+=Math.abs(seek_queue[k]-z);
+    z=seek_queue[k];
+}
+return seek_time;
 }
