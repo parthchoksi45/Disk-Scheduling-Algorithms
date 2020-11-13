@@ -1,16 +1,17 @@
 function scanqueue(){
+	seek_queue=[];
     var head=parseInt(start_track);
     var r=[];
     var l=[];
-    if (direction == "left")
+    if (direction === "left")
 		l.push(0);
-	else if (direction == "right")
+	else if (direction === "right")
         r.push(parseInt(max_track_size-1));
-    for (var i = 0; i < request_queue.length; i++) {
-            if (request_queue[i] < head)
-                l.push(request_queue[i]);
-            if (request_queue[i] > head)
-                r.push(request_queue[i]);
+    for (var i = 0; i < request_queue2.length; i++) {
+            if (request_queue2[i] < head)
+                l.push(request_queue2[i]);
+            if (request_queue2[i] > head)
+                r.push(request_queue2[i]);
         }    
         l.sort(function(a, b){return a - b});
         console.log(l);
@@ -37,4 +38,12 @@ function scanqueue(){
 			direction = "left";
 		}
 	}
+	var z=start_track;
+var seek_time=0;
+for(var k=0;k<seek_queue.length;k++)
+{
+    seek_time+=Math.abs(seek_queue[k]-z);
+    z=seek_queue[k];
+}
+return seek_time;
 }
