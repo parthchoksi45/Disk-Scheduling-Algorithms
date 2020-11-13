@@ -42,10 +42,10 @@
                 var max_track_size;
                 var start_track;
                 var seek_queue=[];
-                var request_queue=[];
+                var request_queue3=[];
                 var count=0;
                 var canvas;
-                var direction="none";
+                var direction="right";
                 function initializemax(l)
                 {
                     max_track_size=l;
@@ -65,7 +65,7 @@
                         cell2.innerHTML = '<input type="textfield" placeholder="Enter the track number."value="" onchange="storeinput(this.value)">';
                 }
                 function storeinput(numb){
-                    request_queue.push(parseInt(numb));
+                    request_queue3.push(parseInt(numb));
                     }
                     function myFunction2()
                     {
