@@ -25,7 +25,8 @@
   <script src="./js/clook.js"></script>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 
+ <script src="./js/pdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
 </head>
 
 <body id="page-top">
@@ -388,6 +389,9 @@
           <!-- Card Content - Collapse -->
           <div class="collapse hide" id="collapseCardExample1">
             <div class="card-body">
+              <div class=" bg-white border-0 d-flex justify-content-sm-center justify-content-lg-end">
+                <button class="btn bg-gradient-danger text-white" id="download1"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</button>
+              </div>
               <div class="text-center" id="dou">
                 <canvas id="myChart"></canvas>
               </div>
@@ -403,6 +407,9 @@
             <!-- Card Content - Collapse -->
             <div class="collapse hide" id="collapseCardExample2">
               <div class="card-body">
+               <div class=" bg-white border-0 d-flex justify-content-sm-center justify-content-lg-end">
+                  <button class="btn bg-gradient-danger text-white" id="download2"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</button>
+                </div>
                 <div class="text-center" id="bar">
                   <canvas id="myChart2"></canvas>
                 </div>
@@ -417,6 +424,9 @@
               <!-- Card Content - Collapse -->
               <div class="collapse hide" id="collapseCardExample3">
                 <div class="card-body">
+                  <div class=" bg-white border-0 d-flex justify-content-sm-center justify-content-lg-end">
+                    <button class="btn bg-gradient-danger text-white" id="download3"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</button>
+                  </div>
                   <div class="text-center" id="pie">
                     <canvas id="myChart3"></canvas>
                   </div>
