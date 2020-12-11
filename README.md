@@ -1,5 +1,5 @@
 How to use website:
-YOUTUBE LINK : https://youtube/zKbXfq6zOSw
+YOUTUBE LINK : https://youtu.be/zKbXfq6zOSw
 1)	Open index.html in web browser.
 2)	You can click on various buttons right at the top stating FCFS, SSTF, ..etc which will take you to the information section of that algorithm along with its illustration.
 3)	On the top right there is a team details button clicking which gives information on all team members.
