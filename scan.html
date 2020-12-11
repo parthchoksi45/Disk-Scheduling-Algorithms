@@ -46,12 +46,26 @@
                 var count=0;
                 var canvas;
                 var direction="right";
-                function initializemax(l)
+                 function initializemax(l)
                 {
+                    if(l>200)
+                    {
+                        alert("Max track size should be less than or equal to 200 for best visualization.")
+                        document.getElementById("mx").value="";
+                    }
+                    else
                     max_track_size=l;
                 }   
                 function initializestart(s)
                 {
+                    var g=document.getElementById("mx").value;
+                    if(parseInt(s)>parseInt(g))
+                    {
+                        console.log(1);
+                        alert("Start track size should be less than max track size.")
+                        document.getElementById("sr").value="";
+                    }
+                    else
                     start_track=s;
                 }
                 function myFunction() 
@@ -65,12 +79,26 @@
                         cell2.innerHTML = '<input type="textfield" placeholder="Enter the track number."value="" onchange="storeinput(this.value)">';
                 }
                 function storeinput(numb){
+                    var g=document.getElementById("mx").value;
+                    if(parseInt(numb)>parseInt(g))
+                    {
+                        alert("Track number should be less than max track size entered by you before.");
+                        document.getElementById("myTable").deleteRow(-1);
+                        count--;
+                    }
+                    else
                     request_queue2.push(parseInt(numb));
                     }
                     function myFunction2()
                     {
+                        if(document.getElementById("mx").value=="")
+                        alert('Enter all the inputs first.');
+                        else if(document.getElementById("sr").value=="")
+                        alert('Enter all the inputs first.');
+                        else{
                         scanqueue();
                         myfunction1();
+                        }
                     }
                 function rightd(){
                     direction="right";
@@ -101,10 +129,10 @@
             <div class="takeinput">
                 <h1 style="text-align: center;font-family: cursive;">INPUT SECTION</h1>
                 <br>
-                <label>Enter the maximum track size :&nbsp;  <input type="number" value=""onchange="initializemax(this.value)"></label>
+                <label>Enter the maximum track size :&nbsp;  <input id="mx" type="number" value=""onchange="initializemax(this.value)"></label>
                 <br>
                 <br>
-                <label>Enter the starting track number: <input type="number" value=""onchange="initializestart(this.value)"></label>
+                <label>Enter the starting track number: <input id="sr" type="number" value=""onchange="initializestart(this.value)"></label>
                 <br>
                 <br>
                 <p>Enter the initial moving direction of head:</p><input type="radio" id="right" name="dir" onclick="rightd()" value="right">Right &nbsp;<input type="radio" id="left" onclick="leftd()" name="dir" value="left">Left
