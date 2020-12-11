@@ -65,6 +65,16 @@
                     else
                     start_track=s;
                 }
+                function myFunction() 
+                {
+                        count++;
+                        var table = document.getElementById("myTable");
+                        var row = table.insertRow(-1);
+                        var cell1 = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        cell1.innerHTML = count;
+                        cell2.innerHTML = '<input type="number" placeholder="Enter the track number."value="" onchange="storeinput(this.value)">';
+                }
                 function storeinput(numb){
                     var g=document.getElementById("mx").value;
                     if(parseInt(numb)>parseInt(g))
